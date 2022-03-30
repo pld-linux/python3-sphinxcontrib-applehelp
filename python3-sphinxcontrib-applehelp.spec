@@ -6,7 +6,7 @@ Summary:	Sphinx extension which outputs Apple help books
 Summary(pl.UTF-8):	Rozszerzenie Sphinksa zapisujące książki pomocy Apple
 Name:		python3-sphinxcontrib-applehelp
 Version:	1.0.2
-Release:	4
+Release:	5
 License:	BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/sphinxcontrib-applehelp/
