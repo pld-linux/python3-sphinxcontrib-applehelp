@@ -21,7 +21,7 @@ BuildRequires:	python3-Sphinx
 BuildRequires:	python3-pytest
 %endif
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.714
+BuildRequires:	rpmbuild(macros) >= 2.044
 Requires:	python3-modules >= 1:3.5
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -38,7 +38,7 @@ książki pomocy Apple.
 %setup -q -n sphinxcontrib_applehelp-%{version}
 
 %build
-%{__python3} -m build --wheel --no-isolation --outdir build-3
+%py3_build_pyproject
 
 %if %{with tests}
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
@@ -48,7 +48,7 @@ PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__python3} -m installer --destdir=$RPM_BUILD_ROOT build-3/*.whl
+%py3_install_pyproject
 
 %clean
 rm -rf $RPM_BUILD_ROOT
