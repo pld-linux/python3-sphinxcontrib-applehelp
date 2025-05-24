@@ -13,16 +13,17 @@ Group:		Libraries/Python
 Source0:	https://pypi.debian.net/sphinxcontrib-applehelp/sphinxcontrib_applehelp-%{version}.tar.gz
 # Source0-md5:	e16bb1d6199f686d411c180e64a8e831
 URL:		https://pypi.org/project/sphinxcontrib-applehelp/
-BuildRequires:	python3-modules >= 1:3.5
+BuildRequires:	python3-modules >= 1:3.9
 BuildRequires:	python3-build
+BuildRequires:	python3-flit_core >= 3.7
 BuildRequires:	python3-installer
 %if %{with tests}
-BuildRequires:	python3-Sphinx
+BuildRequires:	python3-Sphinx >= 5
 BuildRequires:	python3-pytest
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 2.044
-Requires:	python3-modules >= 1:3.5
+Requires:	python3-modules >= 1:3.9
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
